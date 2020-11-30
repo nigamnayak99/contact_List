@@ -1,9 +1,22 @@
 <html>
     <head>
+        
+        <title>
+            <%=title%>
+        </title>
+        <!--title passed as a key in an object from 
+        index.js file , and its value has been replaced while rendering -->
 
     </head>
 
     <body>
         <h1>Rendered from ejs view !</h1>
+        <ul>
+        <%for (let i = 1;i<6;i++){ %>
+            <li>
+                <%= i%><!--equal must be there when printing value-->
+            </li>
+        <%}%> 
+        </ul>
     </body>
 </html>
