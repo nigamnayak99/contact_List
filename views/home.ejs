@@ -2,7 +2,7 @@
     <head>
         
         <title>
-            <%=title%>
+            <%=locals.title%>
         </title>
         <!--title passed as a key in an object from 
         index.js file , and its value has been replaced while rendering -->
@@ -10,13 +10,27 @@
     </head>
 
     <body>
-        <h1>Rendered from ejs view !</h1>
-        <ul>
-        <%for (let i = 1;i<6;i++){ %>
-            <li>
-                <%= i%><!--equal must be there when printing value-->
-            </li>
-        <%}%> 
-        </ul>
+        <h1>Contact List</h1>
+        <div>
+            <ul>
+                <%for (let i of contact_list) {%>
+                    <li>
+                        <p><%= i.name %></p>
+                        <p><%= i.phone %></p>
+                    </li>
+
+                 <%}%>   
+            </ul>
+
+        </div>
+
+        <!--form to take input from user-->
+        <form action="create-contact" method="POST">
+            <input type = "text" name="name" placeholder="Enter Name" required>
+            <input type = "number" name = "phone" placeholder="Enter phone" required>
+
+            <button type = "submit">Add Contact</button>
+        </form>
+    
     </body>
 </html>
