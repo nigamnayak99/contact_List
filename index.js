@@ -6,7 +6,7 @@ const express = require('express');//importing the dependency library
  const app = express();  // Creating object of express
 app.set('view engine','ejs');  //making node know that view engine is ejs
 app.set('views',path.join(__dirname,'views'));  //Setting path for view engine
-
+app.use(express.urlencoded());//it is middleware parser.
 var contactList = [
     {
         name : "Nigam ",
@@ -63,9 +63,20 @@ app.get('/practice',function(req,res){
 
 
 app.post('/create-contact',function(req,res){
+            // contactList.push(
+            //     {
+            //         name:req.body.name,
+            //         phone:req.body.phone
+            //     });
+
+            contactList.push(req.body);
+        //the data is collected,parsed and pushed to local array
     return res.redirect('/');
 
 });
+
+
+
 //////------Controller part Ends  Here ------//////
 
  app.listen(port,function(err){   //make the server listen 
