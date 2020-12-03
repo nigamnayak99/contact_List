@@ -18,13 +18,18 @@
     </head>
 
     <body>
-        <h1 id="heading"><i class="fas fa-address-book">&nbsp;</i>My Contact List</h1>
+        <h1 id="heading"><i class="fas fa-address-book">&nbsp;&nbsp;</i>My Contact List</h1>
         <div id ="contact_div">
-            <ul id ="contacts">
+            <ul>
                 <%for (let i of contact_list) {%>
-                    <li>
-                        <p style="margin-left: 5px;"><%= i.name %></p>
-                        <p style="margin-right: 5px;"><%= i.phone %></p>
+                    <li id="contact">
+                        <div id ="details">
+                            <p style="margin-left: 5px;"><%= i.name %></p>
+                            <p style="margin-right: 5px;"><%= i.phone %></p>
+                        </div>
+                        <div id="delete_button">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>
+                        </div>
                     </li>
 
                  <%}%>   
