@@ -6,7 +6,9 @@ const express = require('express');//importing the dependency library
  const app = express();  // Creating object of express
 app.set('view engine','ejs');  //making node know that view engine is ejs
 app.set('views',path.join(__dirname,'views'));  //Setting path for view engine
+app.use(express.static('assets'));//defines the static path to ejs.
 app.use(express.urlencoded());//it is middleware parser.
+
 var contactList = [
     {
         name : "Nigam ",
@@ -15,7 +17,7 @@ var contactList = [
     },
     {
         name : "Nigam 2 ",
-        phone : "8658261067 2"
+        phone : "86582610672"
 
     },
     {

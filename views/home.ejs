@@ -1,5 +1,6 @@
 <html>
     <head>
+
         
         <title>
             <%=locals.title%>
@@ -7,16 +8,23 @@
         <!--title passed as a key in an object from 
         index.js file , and its value has been replaced while rendering -->
 
+        <script src="https://kit.fontawesome.com/7fbf0dbe07.js" crossorigin="anonymous"></script>
+        <!--font awsome kit link-->
+
+        <link rel="stylesheet" href="/css/home.css">
+        <!--css file link has been added-->
+
+
     </head>
 
     <body>
-        <h1>Contact List</h1>
-        <div>
-            <ul>
+        <h1 id="heading"><i class="fas fa-address-book">&nbsp;</i>My Contact List</h1>
+        <div id ="contact_div">
+            <ul id ="contacts">
                 <%for (let i of contact_list) {%>
                     <li>
-                        <p><%= i.name %></p>
-                        <p><%= i.phone %></p>
+                        <p style="margin-left: 5px;"><%= i.name %></p>
+                        <p style="margin-right: 5px;"><%= i.phone %></p>
                     </li>
 
                  <%}%>   
@@ -31,6 +39,8 @@
 
             <button type = "submit">Add Contact</button>
         </form>
+
+        <script type="text/javascript" src="/js/home.js"></script> 
     
     </body>
 </html>
