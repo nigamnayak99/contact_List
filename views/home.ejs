@@ -28,7 +28,9 @@
                             <p style="margin-right: 5px;"><%= i.phone %></p>
                         </div>
                         <div id="delete_button">
+                            <a href="/delete-contact/<%=i.phone%>">
                             <i class="fa fa-window-close" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </li>
 
@@ -42,7 +44,7 @@
             <input type = "text" name="name" placeholder="Enter Name" required>
             <input type = "number" name = "phone" placeholder="Enter phone" required>
 
-            <button type = "submit">Add Contact</button>
+            <button type = "submit">Add</button>
         </form>
 
         <script type="text/javascript" src="/js/home.js"></script> 

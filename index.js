@@ -61,7 +61,15 @@ app.get('/practice',function(req,res){
 });
 //above controller is for practice view
 
+app.get('/delete-contact/:phone',function(req,res){
+       let phone = req.params.phone;
 
+       let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+       if(contactIndex != -1){
+           contactList.splice(contactIndex,1);
+       }
+       return res.redirect('/');
+});
 
 
 app.post('/create-contact',function(req,res){
