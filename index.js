@@ -9,6 +9,10 @@ app.set('views',path.join(__dirname,'views'));  //Setting path for view engine
 app.use(express.static('assets'));//defines the static path to ejs.
 app.use(express.urlencoded());//it is middleware parser.
 
+app.use(function(req,res,next){
+ console.log("middlewire called");
+ next();
+});
 var contactList = [
     {
         name : "Nigam ",
